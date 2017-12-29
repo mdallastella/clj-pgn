@@ -7,12 +7,15 @@
   (i/parser
    (clojure.java.io/resource "pgn.bnf")))
 
+(defn parse-halfmove [s & r]
+  (println s r)
+  s)
+
 (def pgn-transformations
   {:HEADERS (fn [& vs] {:headers (apply vector vs)})
    :HEADER hash-map
    :TAG (comp keyword str)
-   :VALUE str
-   :HALFMOVE str})
+   :VALUE str})
 
 (defn parse [pgn]
   (->> pgn
