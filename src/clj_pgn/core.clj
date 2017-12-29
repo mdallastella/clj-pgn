@@ -1,6 +1,5 @@
-(ns clj-pgn.core)
+(ns clj-pgn.core
+  (:require [clj-pgn.parser :as parser]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defn load-pgn [path]
+  (parser path))

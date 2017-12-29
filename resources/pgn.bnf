@@ -1,0 +1,24 @@
+PGN = HEADERS MOVELIST RESULT
+HEADERS = HEADER*
+HEADER = BRACKET TAG WS VALUE BRACKET [WS]
+TAG = ALPHANUM
+VALUE = QUOTE STRING QUOTE
+
+MOVELIST = MOVE*
+MOVE = <#"\d+\. "> HALFMOVE [WS COMMENT] [WS HALFMOVE] [WS COMMENT] [WS]
+HALFMOVE = [PIECE] [FILE [RANK]] ['x'] FILE RANK ["+" | "#"] | KINGCASTLE | QUEENCASTLE
+<PIECE> = 'K' | 'Q' | 'R' | 'N' | 'B'
+<FILE> = #"[a-h]"
+<RANK> = #"[1-8]"
+COMMENT = <'{'> STRING <'}'>
+KINGCASTLE = <'O-O' | '0-0'>
+QUEENCASTLE = <'O-O-O' | '0-0-0'>
+
+RESULT = '1-0' | '0-1' | '1/2-1/2' | '*'
+
+<STRING> = (ALPHANUM | #"\s+" | PUNCT)+
+<ALPHANUM> = #"\p{Alnum}+"
+<WS> = <#"\s+">
+<QUOTE> = <'\"'>
+<BRACKET> = <'['> | <']'>
+<PUNCT>  = #"\p{Punct}"
