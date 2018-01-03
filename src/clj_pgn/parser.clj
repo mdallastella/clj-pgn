@@ -11,13 +11,9 @@
   (println s r)
   s)
 
-(def pgn-transformations
-  {:HEADERS (fn [& vs] {:headers (apply vector vs)})
-   :HEADER hash-map
-   :TAG (comp keyword str)
-   :VALUE str})
+(def pgn-transformations nil)
 
 (defn parse [pgn]
   (->> pgn
-       (i/parse pgn-grammar)
-       (i/transform pgn-transformations)))
+       (i/parse pgn-grammar)))
+;; (i/transform pgn-transformations)
