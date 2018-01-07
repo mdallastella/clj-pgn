@@ -4,3 +4,5 @@
 (defn load-pgn [path]
   (-> (slurp path)
       (parser/parse)))
+(defn parse-pgn [s]
+  (parser/parse s))

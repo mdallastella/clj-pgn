@@ -14,10 +14,26 @@ Add the necessary dependency to your project:
 
 ## Usage
 
+Load from a file:
+
 ```clojure
 user> (require '[clj-pgn.core :as clj-pgn])
 user> (clj-pgn/load-pgn "/path/to/file.pgn")
 ```
+
+Load from a string:
+
+```clojure
+user> (require '[clj-pgn.core :as clj-pgn])
+user> (clj-pgn/parse-pgn "1.e4 e5 1/2-1/2")
+```
+
+## Future features
+
+[] Support for variations (#1)
+[] Export [FEN](https://en.wikipedia.org/wiki/Forsyth–Edwards_Notation) notation for a
+given move (#2)
+[] Improve documentation
 
 ## Example
 
@@ -42,7 +58,7 @@ vs Eugene Delmar, New York, 1896:
 Rxh5 8.Bg6# 1-0
 ```
 
-became:
+becomes:
 
 ```clojure
 [{:headers
