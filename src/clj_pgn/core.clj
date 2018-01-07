@@ -2,4 +2,5 @@
   (:require [clj-pgn.parser :as parser]))
 
 (defn load-pgn [path]
-  (parser path))
+  (-> (slurp path)
+      (parser/parse)))
