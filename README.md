@@ -30,10 +30,10 @@ user> (clj-pgn/parse-pgn "1.e4 e5 1/2-1/2")
 
 ## Future features
 
-[] Support for variations (#1)
-[] Export [FEN](https://en.wikipedia.org/wiki/Forsyth–Edwards_Notation) notation for a
+- [ ] Support for variations (#1)
+- [ ] Export [FEN](https://en.wikipedia.org/wiki/Forsyth–Edwards_Notation) notation for a
 given move (#2)
-[] Improve documentation
+- [ ] Improve documentation
 
 ## Example
 
