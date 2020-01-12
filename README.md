@@ -9,7 +9,7 @@ a PGN database into a vector of maps. It's in a very early stage.
 Add the necessary dependency to your project:
 
 ``` clojure
-[clj-pgn "0.1.0-SNAPSHOT"]
+[clj-pgn "0.1.1-SNAPSHOT"]
 ```
 
 ## Usage
